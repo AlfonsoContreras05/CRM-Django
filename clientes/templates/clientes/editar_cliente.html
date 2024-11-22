@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block title %}Editar Cliente{% endblock %}
+
+{% block content %}
+<h1 class="mb-4">Editar Cliente</h1>
+<form method="post">
+    {% csrf_token %}
+    <div class="mb-3">
+        <label for="nombre" class="form-label">Nombre:</label>
+        <input type="text" id="nombre" name="nombre" class="form-control" value="{{ cliente.nombre }}">
+    </div>
+    <div class="mb-3">
+        <label for="email" class="form-label">Email:</label>
+        <input type="email" id="email" name="email" class="form-control" value="{{ cliente.email }}">
+    </div>
+    <div class="mb-3">
+        <label for="telefono" class="form-label">Teléfono:</label>
+        <input type="text" id="telefono" name="telefono" class="form-control" value="{{ cliente.telefono }}">
+    </div>
+    <div class="mb-3">
+        <label for="direccion" class="form-label">Dirección:</label>
+        <textarea id="direccion" name="direccion" class="form-control">{{ cliente.direccion }}</textarea>
+    </div>
+    <div class="mb-3">
+        <label for="notas" class="form-label">Notas:</label>
+        <textarea id="notas" name="notas" class="form-control">{{ cliente.notas }}</textarea>
+    </div>
+    <button type="submit" class="btn btn-success">Guardar Cambios</button>
+    <a href="{% url 'listar_clientes' %}" class="btn btn-secondary">Cancelar</a>
+</form>
+{% endblock %}

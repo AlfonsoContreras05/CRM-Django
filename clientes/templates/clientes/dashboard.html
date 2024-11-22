@@ -1,0 +1,65 @@
+{% extends 'base.html' %}
+
+{% block title %}Dashboard{% endblock %}
+
+{% block content %}
+<h1 class="mb-4">Dashboard</h1>
+
+<div class="mb-4">
+    <h3>Total de Clientes: {{ total_clientes }}</h3>
+</div>
+
+<div class="mb-4">
+    <h4>Clientes por Estado</h4>
+    <canvas id="clientesPorEstadoChart" width="400" height="200"></canvas>
+</div>
+
+<!-- Incluyendo Chart.js -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+    var ctx = document.getElementById('clientesPorEstadoChart').getContext('2d');
+    var clientesPorEstadoData = {
+        labels: [
+            {% for estado in clientes_por_estado %}
+                '{{ estado.estado }}',
+            {% endfor %}
+        ],
+        datasets: [{
+            label: 'Número de Clientes',
+            data: [
+                {% for estado in clientes_por_estado %}
+                    {{ estado.total }},
+                {% endfor %}
+            ],
+            backgroundColor: [
+                'rgba(75, 192, 192, 0.2)',
+                'rgba(54, 162, 235, 0.2)',
+                'rgba(255, 206, 86, 0.2)',
+                'rgba(231, 233, 237, 0.2)',
+                'rgba(255, 99, 132, 0.2)'
+            ],
+            borderColor: [
+                'rgba(75, 192, 192, 1)',
+                'rgba(54, 162, 235, 1)',
+                'rgba(255, 206, 86, 1)',
+                'rgba(231, 233, 237, 1)',
+                'rgba(255, 99, 132, 1)'
+            ],
+            borderWidth: 1
+        }]
+    };
+
+    var clientesPorEstadoChart = new Chart(ctx, {
+        type: 'bar',
+        data: clientesPorEstadoData,
+        options: {
+            responsive: true,
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            }
+        }
+    });
+</script>
+{% endblock %}

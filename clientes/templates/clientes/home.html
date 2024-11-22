@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block title %}Home - CRM WizzardTech{% endblock %}
+
+{% block content %}
+<h1 class="mb-4">Bienvenido a CRM WizzardTech</h1>
+
+<div class="list-group">
+    <a href="{% url 'dashboard' %}" class="list-group-item list-group-item-action">
+        Dashboard
+    </a>
+    <a href="{% url 'listar_clientes' %}" class="list-group-item list-group-item-action">
+        Gestión de Clientes
+    </a>
+    <a href="{% url 'crear_cliente' %}" class="list-group-item list-group-item-action">
+        Agregar Cliente
+    </a>
+</div>
+{% endblock %}
