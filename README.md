@@ -71,8 +71,8 @@ Este proyecto fue desarrollado de manera individual para propósitos de demostra
 ## 👤 Contacto
 Para cualquier consulta o sugerencia puedes contactarme:
 - **Nombre**: Alfonso Contreras
-- **Email**: alfonso.contreras@example.com
-- **LinkedIn**: [linkedin.com/in/alfonso-contreras](https://linkedin.com/in/alfonso-contreras)
+- **Email**: alfonso.contreras.a3@gmail.com
+- **LinkedIn**: [linkedin.com/in/alfonso-contreras](https://www.linkedin.com/in/alfonso-contreras-bb7521196/)
 
 ✨ ¡Gracias por revisar este proyecto! Espero que pueda demostrar mis capacidades y entusiasmo por el desarrollo de software.
 
